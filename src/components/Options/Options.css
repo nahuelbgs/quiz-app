@@ -1,0 +1,20 @@
+.options-container{
+    height: 350px;
+    display: flex;
+    width: 350px;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.options-button{
+    background-color: #fff;
+    color: black;
+}
+
+.correct{
+    background-color: green;
+}
+
+.incorrect{
+    background-color: red;
+}
