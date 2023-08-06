@@ -21,10 +21,12 @@
 
 .correct{
     background-color: #A6D62D;
+    color: black;
 }
 
 .incorrect{
     background-color: rgb(241, 18, 18);
+    color: black;
 }
 
 @media screen and (max-width: 900px) {
