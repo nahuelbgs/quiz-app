@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "./Options.css";
 
-function Options({ questions, active, sendSelectedOption }) {
+function Options({ questions, active, sendSelectedOption, noSymbols }) {
 
   const [randomOptions, setRandomOptions] = useState([]);
+  const [selectedClass, setSelectedClass] = useState('')
 
   useEffect(() => {
     let correctOption = questions[0].correct_answer;
@@ -21,6 +22,7 @@ function Options({ questions, active, sendSelectedOption }) {
   }
   
   const handleActive = (e) => {
+    setSelectedClass(e.target.textContent)
     sendSelectedOption(e.target.textContent)
   };
 
@@ -30,10 +32,10 @@ function Options({ questions, active, sendSelectedOption }) {
       {randomOptions.map((option) => (
         <button
           key={option}
-          className={`options-button ${manageClassName(option)}`}
+          className={`options-button ${manageClassName(option)} ${selectedClass === option ? 'selected' : ''}`}
           onClick={handleActive}
         >
-          {option}
+          {noSymbols(option)}
         </button>
       ))}
     </div>

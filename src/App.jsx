@@ -37,6 +37,7 @@ function App() {
       .replaceAll('&iacute;', 'í')
       .replaceAll('&oacute;', 'ó')
       .replaceAll('&uacute;', 'ú')
+      .replaceAll('&ouml;', 'Ö')
   };
 
   const handleSeeResults = (selectedOption) => {
@@ -73,11 +74,15 @@ function App() {
         <>
           {questions.map((question) => (
             <div className="container" key={question.question}>
-              <h1 className='correct-answers'>Correct answers: {correctAnswersCounter}</h1>
-              <h1 className="question">{noSymbols(question.question)}</h1>
-              <Options sendSelectedOption={receiveSelectedOption} questions={questions} active={active} />
-              {active == false ? <button className='button' onClick={() => handleSeeResults(selectedOption)}>See results</button> :
-              <button className='button' onClick={handleContinue}>Continue</button>}
+              <div className='question-container'>
+                <h1 className='correct-answers'>Correct answers: {correctAnswersCounter}</h1>
+                <h1 className="question">{noSymbols(question.question)}</h1>
+              </div>
+              <Options sendSelectedOption={receiveSelectedOption} questions={questions} active={active} noSymbols={noSymbols} />
+              <div className='button-container'>
+                {active == false ? <button className='button' onClick={() => handleSeeResults(selectedOption)}>See results</button> :
+                <button className='button' onClick={handleContinue}>Continue</button>}
+              </div>
             </div>
           ))}
         </>

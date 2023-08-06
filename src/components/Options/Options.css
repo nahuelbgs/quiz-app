@@ -1,5 +1,5 @@
 .options-container{
-    height: 350px;
+    height: 55%;
     display: flex;
     width: 350px;
     justify-content: space-evenly;
@@ -9,12 +9,26 @@
 .options-button{
     background-color: #fff;
     color: black;
+    width: 80%;
+    margin: auto;
+}
+
+.selected{
+    background-color: rgb(27, 62, 219);
+    color: white;
+    transition: background-color, color 0.4s ease;
 }
 
 .correct{
-    background-color: green;
+    background-color: #A6D62D;
 }
 
 .incorrect{
-    background-color: red;
+    background-color: rgb(241, 18, 18);
 }
+
+@media screen and (max-width: 900px) {
+    .options-container{
+      width: 100%;
+    }
+  }
