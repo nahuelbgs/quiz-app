@@ -18,7 +18,8 @@
 
 .correct-answers {
   width: 80%;
-  font-size: 28px;
+  font-size: 20px;
+  height: 20%;
 }
 
 .question-container {
@@ -31,8 +32,9 @@
 }
 
 .question {
+  height: 80%;
   width: 80%;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .button-container {
